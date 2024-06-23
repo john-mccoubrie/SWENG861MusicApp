@@ -31,11 +31,15 @@ jobs:
         run: dotnet publish MusicApp.csproj -c Release -o ../publish
         working-directory: ./MusicApp
 
+      - name: List contents of the publish directory
+        run: Get-ChildItem -Path . -Force | Format-Table
+        working-directory: ./publish
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ./publish
+          path: ../publish
 
   deploy:
     runs-on: windows-latest
