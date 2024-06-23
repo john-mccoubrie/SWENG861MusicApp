@@ -9845,11 +9845,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\John\\Documents\\GitHub\\PSUSwengMusicApp\\MusicAppTest\\MusicAppTest.csproj",
+      "projectUniqueName": "C:\\Users\\John\\Documents\\GitHub\\SWENG861MusicApp\\MusicAppTest\\MusicAppTest.csproj",
       "projectName": "MusicAppTest",
-      "projectPath": "C:\\Users\\John\\Documents\\GitHub\\PSUSwengMusicApp\\MusicAppTest\\MusicAppTest.csproj",
+      "projectPath": "C:\\Users\\John\\Documents\\GitHub\\SWENG861MusicApp\\MusicAppTest\\MusicAppTest.csproj",
       "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\John\\Documents\\GitHub\\PSUSwengMusicApp\\MusicAppTest\\obj\\",
+      "outputPath": "C:\\Users\\John\\Documents\\GitHub\\SWENG861MusicApp\\MusicAppTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9870,8 +9870,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\John\\Documents\\GitHub\\PSUSwengMusicApp\\MusicApp\\MusicApp.csproj": {
-              "projectPath": "C:\\Users\\John\\Documents\\GitHub\\PSUSwengMusicApp\\MusicApp\\MusicApp.csproj"
+            "C:\\Users\\John\\Documents\\GitHub\\SWENG861MusicApp\\MusicApp\\MusicApp.csproj": {
+              "projectPath": "C:\\Users\\John\\Documents\\GitHub\\SWENG861MusicApp\\MusicApp\\MusicApp.csproj"
             }
           }
         }

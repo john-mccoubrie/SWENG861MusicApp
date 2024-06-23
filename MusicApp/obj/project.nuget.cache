@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Iptv4LSJSZ3ZIdY4RednciPKUdOxvbDIKL7fAEVQ3Qqbb/W2Nyz6Y/lx9Z+4rfZAipDS0tH0ijxtWRfV4zz9Tg==",
+  "dgSpecHash": "/YpceL0EnnBTUDV5s6dL6Pa9INqlb/cRf+y+mKPFcM9V9tyG8x+ofL1Vfozz8gkUD/Osdui3S+YUGTTIMfR8tA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\John\\Documents\\GitHub\\PSUSwengMusicApp\\MusicApp\\MusicApp.csproj",
+  "projectFilePath": "C:\\Users\\John\\Documents\\GitHub\\SWENG861MusicApp\\MusicApp\\MusicApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\John\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\John\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
