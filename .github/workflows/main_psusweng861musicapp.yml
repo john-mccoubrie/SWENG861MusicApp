@@ -42,9 +42,6 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -65,6 +62,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'PSUSweng861MusicApp'
+          app-name: 'SWENG861MusicApp'
           slot-name: 'Production'
           package: ./MusicApp/publish
