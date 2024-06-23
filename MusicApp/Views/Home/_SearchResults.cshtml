@@ -1,0 +1,32 @@
+﻿@model MusicApp.ViewModels.SearchResultsViewModel
+
+<h2>Song Results</h2>
+<ul>
+    @foreach (var song in Model.Songs)
+    {
+        <li>
+            @song.Title by @song.Artist.Name
+            <button onclick="addToPlaylist('@Html.Raw(System.Web.HttpUtility.JavaScriptStringEncode(song.Title))', '@Html.Raw(System.Web.HttpUtility.JavaScriptStringEncode(song.Artist.Name))')">Add to Playlist</button>
+        </li>
+    }
+</ul>
+
+<script>
+    function addToPlaylist(songTitle, artistName) {
+        $.ajax({
+            url: '/Home/AddSongToPlaylist',
+            type: 'POST',
+            data: { songTitle: songTitle, artistName: artistName },
+            success: function (response) {
+                if (response.success) {
+                    alert('Song added to playlist!');
+                } else {
+                    alert('Error: ' + response.message);
+                }
+            },
+            error: function () {
+                alert('Error adding song to playlist.');
+            }
+        });
+    }
+</script>

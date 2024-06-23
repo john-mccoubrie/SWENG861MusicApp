@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MusicApp.Models.PlaylistModel>
+
+<h2>Playlists</h2>
+<div id="playlist-container">
+    @foreach (var playlist in Model)
+    {
+        <h3>@playlist.Name</h3>
+        <ul>
+            @foreach (var item in playlist.Items)
+            {
+                <li id="song-@item.PlaylistItemId">
+                    <span class="editable" data-id="@item.PlaylistItemId" data-field="title">@item.Song.Title</span> by
+                    @if (item.Song.Artist == null || string.IsNullOrEmpty(item.Song.Artist.Name))
+                    {
+                        <span class="editable" data-id="@item.PlaylistItemId" data-field="artist">Unknown Artist</span>
+                    }
+                    else
+                    {
+                        <span class="editable" data-id="@item.PlaylistItemId" data-field="artist">@item.Song.Artist.Name</span>
+                    }
+                    <button class="edit" data-url="@Url.Action("EditSong", "Playlist")" data-playlist-item-id="@item.PlaylistItemId">Edit</button>
+                    <button class="delete" data-url="@Url.Action("RemoveSong", "Playlist")" data-playlist-id="@item.PlaylistId" data-song-id="@item.SongId">Delete</button>
+                </li>
+
+            }
+        </ul>
+    }
+</div>

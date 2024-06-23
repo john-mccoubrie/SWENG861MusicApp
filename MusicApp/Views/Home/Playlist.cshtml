@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MusicApp.Models.PlaylistModel>
+
+<h1>Playlists</h1>
+@foreach (var playlist in Model)
+{
+    <div>
+        <h3>@playlist.Name</h3>
+        <a href="@Url.Action("EditPlaylist", new { id = playlist.PlaylistId })">Edit</a>
+        <button onclick="deletePlaylist(@playlist.PlaylistId)">Delete</button>
+        <ul>
+            @foreach (var item in playlist.Items)
+            {
+                <li>
+                    @item.Song.Title by @item.Song.Artist.Name
+                    <button onclick="editSong(@item.PlaylistItemId)">Edit</button>
+                    <button onclick="deleteSong(@item.PlaylistItemId)">Delete</button>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+<button onclick="location.href='@Url.Action("CreatePlaylist")'">Create New Playlist</button>
+
+<script>
+    function deletePlaylist(playlistId) {
+        if (confirm("Are you sure you want to delete this playlist?")) {
+            $.ajax({
+                url: '/Home/DeletePlaylist',
+                type: 'POST',
+                data: { id: playlistId },
+                success: function () {
+                    location.reload();  // Reload the page to update the list
+                },
+                error: function () {
+                    alert('Error deleting playlist.');
+                }
+            });
+        }
+    }
+
+    function editSong(playlistItemId) {
+        // Redirect to an edit page or show an edit form (implementation depends on your app structure)
+        // For simplicity, let's assume we redirect to an edit page
+        location.href = '/Home/EditSong?playlistItemId=' + playlistItemId;
+    }
+
+    function deleteSong(playlistItemId) {
+        if (confirm("Are you sure you want to delete this song from the playlist?")) {
+            $.ajax({
+                url: '/Home/DeleteSongFromPlaylist',
+                type: 'POST',
+                data: { playlistItemId: playlistItemId },
+                success: function () {
+                    location.reload();  // Reload the page to update the list
+                },
+                error: function () {
+                    alert('Error deleting song from playlist.');
+                }
+            });
+        }
+    }
+</script>
