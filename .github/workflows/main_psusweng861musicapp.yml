@@ -66,6 +66,5 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'PSUSWENG861MusicApp'
-          slot-name: 'Production'
-          package: ./MusicApp/publish
+          app-name: 'SWENG861MusicApp'
+          package: './MusicApp/publish'
