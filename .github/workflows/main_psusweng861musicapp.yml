@@ -23,13 +23,12 @@ jobs:
         run: dotnet build --configuration Release
         working-directory: ./MusicApp
 
-      - name: dotnet publish
-        # Ensure you specify the project file directly if you are dealing with multiple projects
-        run: dotnet publish ./MusicApp/MusicApp.csproj -c Release -o ./publish
+      - name: List contents of the MusicApp directory
+        run: ls -la
         working-directory: ./MusicApp
 
-      - name: List published files
-        run: ls -la ./publish
+      - name: dotnet publish
+        run: dotnet publish MusicApp.csproj -c Release -o ../publish
         working-directory: ./MusicApp
 
       - name: Upload artifact for deployment job
@@ -45,7 +44,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write # This is required for requesting the JWT
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
