@@ -24,7 +24,7 @@ jobs:
         working-directory: ./MusicApp
 
       - name: List contents of the MusicApp directory
-        run: ls -la
+        run: Get-ChildItem -Path . -Force | Format-Table
         working-directory: ./MusicApp
 
       - name: dotnet publish
