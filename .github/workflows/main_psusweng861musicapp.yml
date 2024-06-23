@@ -1,4 +1,4 @@
-name: Build and deploy ASP.Net Core app to Azure Web App - PSUSweng861MusicApp
+name: Build and deploy ASP.Net Core app to Azure Web App - PSUSWENG861MusicApp
 
 on:
   push:
@@ -52,9 +52,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+          path: deploy  # This specifies a directory within the runner to place the downloaded artifacts.
 
       - name: List contents before deployment
-        run: Get-ChildItem -Path . -Force | Format-List
+        run: Get-ChildItem -Path ./deploy -Force | Format-List  # Lists the contents of the directory where artifacts are downloaded.
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -66,5 +67,5 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'PSUSWENG861MusicApp'
-          package: './MusicApp/publish'
+          app-name: 'PSUSweng861MusicApp'
+          package: './deploy'  # This should point to the directory where the artifact is downloaded.
