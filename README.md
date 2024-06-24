@@ -10,8 +10,6 @@ SQL Server: Install SQL Server.
 Installation
 Clone the repository and open the project:
 
-bash
-Copy code
 git clone https://github.com/john-mccoubrie/SWENG861MusicApp.git
 cd SWENG861MusicApp
 Open the solution file MusicApp.sln in Visual Studio.
@@ -25,7 +23,6 @@ These commands scaffold a migration based on changes you make to your models and
 Update Connection String
 Modify the connection string in the web.config file to match your SQL Server configuration:
 
-Copy code
 <connectionStrings>
     <add name="DefaultConnection" connectionString="Server=your_server_name; Database=your_database_name; Integrated Security=True;" providerName="System.Data.SqlClient"/>
 </connectionStrings>
